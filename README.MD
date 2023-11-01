@@ -18,7 +18,10 @@ This project involves creating data pipelines using Apache Airflow. For more det
 
 * Create dags, config, logs, and plugins directory
 
-* To initialize run 'airflow init'
+* To initialize run
+
+ ''' airflow init
+ '''
 
 * To open airflow run ''' docker-compose up ''' and then open ''' http://localhost:8080/ ''' on your web browser
 
