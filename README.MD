@@ -20,10 +20,10 @@ This project involves creating data pipelines using Apache Airflow. For more det
 
 * To initialize run
 
- '''
+ ' ' '
  airflow init
- 
- '''
+
+ ' ' '
 
 * To open airflow run ''' docker-compose up ''' and then open ''' http://localhost:8080/ ''' on your web browser
 
