@@ -14,7 +14,7 @@ This project involves creating data pipelines using Apache Airflow. For more det
 
 3. Run Airflow in Docker
 
-* [Airflow with Docker](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
+* [Install Airflow with Docker](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
 
 * Create dags, config, logs, and plugins directory
 
