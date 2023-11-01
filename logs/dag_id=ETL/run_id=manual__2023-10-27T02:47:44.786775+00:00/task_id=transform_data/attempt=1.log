@@ -1,0 +1,13 @@
+[2023-10-27T02:47:47.471+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.transform_data manual__2023-10-27T02:47:44.786775+00:00 [queued]>
+[2023-10-27T02:47:47.486+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.transform_data manual__2023-10-27T02:47:44.786775+00:00 [queued]>
+[2023-10-27T02:47:47.486+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-27T02:47:47.507+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform_data> on 2023-10-27 02:47:44.786775+00:00
+[2023-10-27T02:47:47.520+0000] {standard_task_runner.py:57} INFO - Started process 350 to run task
+[2023-10-27T02:47:47.527+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'transform_data', 'manual__2023-10-27T02:47:44.786775+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpyaa3_o0k']
+[2023-10-27T02:47:47.531+0000] {standard_task_runner.py:85} INFO - Job 173: Subtask transform_data
+[2023-10-27T02:47:47.620+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.transform_data manual__2023-10-27T02:47:44.786775+00:00 [running]> on host 8bad117ddb55
+[2023-10-27T02:47:47.878+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-27T02:47:44.786775+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-27T02:47:44.786775+00:00'
+[2023-10-27T02:47:48.444+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-10-27T02:47:48.454+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=transform_data, execution_date=20231027T024744, start_date=20231027T024747, end_date=20231027T024748
+[2023-10-27T02:47:48.514+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-27T02:47:48.537+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

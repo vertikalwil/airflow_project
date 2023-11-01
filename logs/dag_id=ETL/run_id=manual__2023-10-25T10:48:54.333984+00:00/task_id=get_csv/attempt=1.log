@@ -1,0 +1,15 @@
+[2023-10-25T10:48:55.868+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T10:48:54.333984+00:00 [queued]>
+[2023-10-25T10:48:55.875+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T10:48:54.333984+00:00 [queued]>
+[2023-10-25T10:48:55.875+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-25T10:48:55.886+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): get_csv> on 2023-10-25 10:48:54.333984+00:00
+[2023-10-25T10:48:55.892+0000] {standard_task_runner.py:57} INFO - Started process 220 to run task
+[2023-10-25T10:48:55.894+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'get_csv', 'manual__2023-10-25T10:48:54.333984+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp21hjz_ma']
+[2023-10-25T10:48:55.896+0000] {standard_task_runner.py:85} INFO - Job 101: Subtask get_csv
+[2023-10-25T10:48:55.929+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.get_csv manual__2023-10-25T10:48:54.333984+00:00 [running]> on host 80a803df81aa
+[2023-10-25T10:48:55.993+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='get_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-10-25T10:48:54.333984+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-25T10:48:54.333984+00:00'
+[2023-10-25T10:48:56.001+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-25T10:48:56.016+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/providers/common/sql/hooks/sql.py:219 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2023-10-25T10:48:56.048+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-10-25T10:48:56.056+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=get_csv, execution_date=20231025T104854, start_date=20231025T104855, end_date=20231025T104856
+[2023-10-25T10:48:56.107+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-25T10:48:56.122+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

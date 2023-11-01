@@ -1,0 +1,43 @@
+[2023-10-22T01:10:32.200+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:10:31.264090+00:00 [queued]>
+[2023-10-22T01:10:32.210+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:10:31.264090+00:00 [queued]>
+[2023-10-22T01:10:32.210+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T01:10:32.225+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): scrape_data> on 2023-10-22 01:10:31.264090+00:00
+[2023-10-22T01:10:32.231+0000] {standard_task_runner.py:57} INFO - Started process 568 to run task
+[2023-10-22T01:10:32.233+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dagg', 'scrape_data', 'manual__2023-10-22T01:10:31.264090+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpd71rq52l']
+[2023-10-22T01:10:32.235+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask scrape_data
+[2023-10-22T01:10:32.274+0000] {task_command.py:416} INFO - Running <TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:10:31.264090+00:00 [running]> on host 88ab045975f5
+[2023-10-22T01:10:32.352+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='first_dagg' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T01:10:31.264090+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T01:10:31.264090+00:00'
+[2023-10-22T01:10:32.352+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-10-22T01:10:32.353+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'ls -la']
+[2023-10-22T01:10:32.362+0000] {subprocess.py:86} INFO - Output:
+[2023-10-22T01:10:32.364+0000] {subprocess.py:93} INFO - total 108
+[2023-10-22T01:10:32.364+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 22 00:55 .
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 22 00:55 ..
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - -rwxr-xr-x   1 root root     0 Oct 22 00:55 .dockerenv
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - -rw-rw-r--   1 root root   282 Oct 12 09:27 ***-scheduler-autorestart
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:27 bin
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Sep 29 20:00 boot
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - -rwxrwxr-x   1 root root   576 Oct 12 09:27 clean-logs
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - drwxr-xr-x   5 root root   340 Oct 22 00:55 dev
+[2023-10-22T01:10:32.365+0000] {subprocess.py:93} INFO - -rwxrwxr-x   1 root root 11270 Oct 12 09:27 entrypoint
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 22 00:55 etc
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:28 home
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 11 23:58 lib
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Oct  9 00:00 lib64
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Oct  9 00:00 media
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Oct  9 00:00 mnt
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:28 opt
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - dr-xr-xr-x 426 root root     0 Oct 22 00:55 proc
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwx------   1 root root  4096 Oct 12 09:32 root
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:27 run
+[2023-10-22T01:10:32.366+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Oct  9 00:00 sbin
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:27 scripts
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - drwxr-xr-x   2 root root  4096 Oct  9 00:00 srv
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - dr-xr-xr-x  11 root root     0 Oct 22 00:55 sys
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - drwxrwxrwt   1 root root  4096 Oct 22 01:10 tmp
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct 12 09:28 usr
+[2023-10-22T01:10:32.367+0000] {subprocess.py:93} INFO - drwxr-xr-x   1 root root  4096 Oct  9 00:00 var
+[2023-10-22T01:10:32.367+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-10-22T01:10:32.391+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=first_dagg, task_id=scrape_data, execution_date=20231022T011031, start_date=20231022T011032, end_date=20231022T011032
+[2023-10-22T01:10:32.405+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-22T01:10:32.419+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

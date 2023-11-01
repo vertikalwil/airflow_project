@@ -1,0 +1,39 @@
+[2023-10-22T11:02:36.493+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:02:35.595110+00:00 [queued]>
+[2023-10-22T11:02:36.507+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:02:35.595110+00:00 [queued]>
+[2023-10-22T11:02:36.507+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T11:02:36.525+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_Transformation> on 2023-10-22 11:02:35.595110+00:00
+[2023-10-22T11:02:36.531+0000] {standard_task_runner.py:57} INFO - Started process 268 to run task
+[2023-10-22T11:02:36.535+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Data_Transformation', 'manual__2023-10-22T11:02:35.595110+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpsd_2dcav']
+[2023-10-22T11:02:36.538+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask Data_Transformation
+[2023-10-22T11:02:36.587+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:02:35.595110+00:00 [running]> on host 4ad883a00f98
+[2023-10-22T11:02:36.686+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Data_Transformation' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T11:02:35.595110+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T11:02:35.595110+00:00'
+[2023-10-22T11:02:36.706+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/first_dags.py", line 19, in data_transform
+    df['spesifikasi'] = df.spesifikasi.apply(ast.literal_eval)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/series.py", line 4630, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/apply.py", line 1025, in apply
+    return self.apply_standard()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/apply.py", line 1076, in apply_standard
+    mapped = lib.map_infer(
+  File "pandas/_libs/lib.pyx", line 2834, in pandas._libs.lib.map_infer
+  File "/usr/local/lib/python3.8/ast.py", line 99, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/local/lib/python3.8/ast.py", line 98, in _convert
+    return _convert_signed_num(node)
+  File "/usr/local/lib/python3.8/ast.py", line 75, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/local/lib/python3.8/ast.py", line 66, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/local/lib/python3.8/ast.py", line 63, in _raise_malformed_node
+    raise ValueError(f'malformed node or string: {node!r}')
+ValueError: malformed node or string: <_ast.Name object at 0x7f2da020d700>
+[2023-10-22T11:02:36.716+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=Data_Transformation, execution_date=20231022T110235, start_date=20231022T110236, end_date=20231022T110236
+[2023-10-22T11:02:36.733+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 9 for task Data_Transformation (malformed node or string: <_ast.Name object at 0x7f2da020d700>; 268)
+[2023-10-22T11:02:36.747+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T11:02:36.767+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

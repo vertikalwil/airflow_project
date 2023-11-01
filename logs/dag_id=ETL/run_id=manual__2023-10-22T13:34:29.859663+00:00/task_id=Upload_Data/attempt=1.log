@@ -1,0 +1,106 @@
+[2023-10-22T13:34:30.976+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T13:34:29.859663+00:00 [queued]>
+[2023-10-22T13:34:30.985+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T13:34:29.859663+00:00 [queued]>
+[2023-10-22T13:34:30.985+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T13:34:30.998+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Upload_Data> on 2023-10-22 13:34:29.859663+00:00
+[2023-10-22T13:34:31.005+0000] {standard_task_runner.py:57} INFO - Started process 207 to run task
+[2023-10-22T13:34:31.009+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Upload_Data', 'manual__2023-10-22T13:34:29.859663+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpn1nw4lwl']
+[2023-10-22T13:34:31.016+0000] {standard_task_runner.py:85} INFO - Job 32: Subtask Upload_Data
+[2023-10-22T13:34:31.085+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Upload_Data manual__2023-10-22T13:34:29.859663+00:00 [running]> on host 32031900c769
+[2023-10-22T13:34:31.199+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Upload_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T13:34:29.859663+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T13:34:29.859663+00:00'
+[2023-10-22T13:34:31.201+0000] {sql.py:274} INFO - Executing: 
+
+        CREATE TABLE scrap (
+            harga TEXT,
+            alamat TEXT,
+            fasilitas TEXT,
+            Carport TEXT,
+            Dapur TEXT,
+            Daya_Listrik TEXT,
+            Garasi TEXT,
+            Hadap TEXT,
+            Hook TEXT,
+            ID_Iklan TEXT,
+            Jumlah_Lantai TEXT,
+            Kamar_Mandi TEXT,
+            Kamar_Mandi Pembantu TEXT,
+            Kamar_Pembantu TEXT,
+            Kamar_Tidur TEXT,
+            Kondisi_Perabotan TEXT,
+            Kondisi_Properti TEXT,
+            Konsep_dan_Gaya Rumah TEXT,
+            Lebar_Jalan TEXT,
+            Luas_Bangunan TEXT,
+            Luas_Tanah TEXT,
+            Material_Bangunan TEXT,
+            Material_Lantai TEXT,
+            Pemandangan TEXT,
+            Ruang_Makan TEXT,
+            Ruang_Tamu TEXT,
+            Sertifikat TEXT,
+            Sumber_Air TEXT,
+            Tahun_Di_Renovasi TEXT,
+            Tahun_Dibangun TEXT,
+            Terjangkau_Internet TEXT,
+            Tipe_Properti TEXT
+        );
+
+        
+[2023-10-22T13:34:31.212+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T13:34:31.226+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T13:34:31.239+0000] {sql.py:418} INFO - Running statement: 
+
+        CREATE TABLE scrap (
+            harga TEXT,
+            alamat TEXT,
+            fasilitas TEXT,
+            Carport TEXT,
+            Dapur TEXT,
+            Daya_Listrik TEXT,
+            Garasi TEXT,
+            Hadap TEXT,
+            Hook TEXT,
+            ID_Iklan TEXT,
+            Jumlah_Lantai TEXT,
+            Kamar_Mandi TEXT,
+            Kamar_Mandi Pembantu TEXT,
+            Kamar_Pembantu TEXT,
+            Kamar_Tidur TEXT,
+            Kondisi_Perabotan TEXT,
+            Kondisi_Properti TEXT,
+            Konsep_dan_Gaya Rumah TEXT,
+            Lebar_Jalan TEXT,
+            Luas_Bangunan TEXT,
+            Luas_Tanah TEXT,
+            Material_Bangunan TEXT,
+            Material_Lantai TEXT,
+            Pemandangan TEXT,
+            Ruang_Makan TEXT,
+            Ruang_Tamu TEXT,
+            Sertifikat TEXT,
+            Sumber_Air TEXT,
+            Tahun_Di_Renovasi TEXT,
+            Tahun_Dibangun TEXT,
+            Terjangkau_Internet TEXT,
+            Tipe_Properti TEXT
+        );
+
+        , parameters: None
+[2023-10-22T13:34:31.242+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "TEXT"
+LINE 16:             Kamar_Mandi Pembantu TEXT,
+                                          ^
+
+[2023-10-22T13:34:31.255+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=Upload_Data, execution_date=20231022T133429, start_date=20231022T133430, end_date=20231022T133431
+[2023-10-22T13:34:31.274+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 32 for task Upload_Data (syntax error at or near "TEXT"
+LINE 16:             Kamar_Mandi Pembantu TEXT,
+                                          ^
+; 207)
+[2023-10-22T13:34:31.302+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T13:34:31.341+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

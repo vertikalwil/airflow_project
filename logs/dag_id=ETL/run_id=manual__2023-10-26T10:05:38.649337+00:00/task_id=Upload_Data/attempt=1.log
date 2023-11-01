@@ -1,0 +1,25 @@
+[2023-10-26T10:05:42.286+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-26T10:05:38.649337+00:00 [queued]>
+[2023-10-26T10:05:42.306+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-26T10:05:38.649337+00:00 [queued]>
+[2023-10-26T10:05:42.307+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-26T10:05:42.332+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Upload_Data> on 2023-10-26 10:05:38.649337+00:00
+[2023-10-26T10:05:42.349+0000] {standard_task_runner.py:57} INFO - Started process 264 to run task
+[2023-10-26T10:05:42.364+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Upload_Data', 'manual__2023-10-26T10:05:38.649337+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpjeg2o9wu']
+[2023-10-26T10:05:42.371+0000] {standard_task_runner.py:85} INFO - Job 125: Subtask Upload_Data
+[2023-10-26T10:05:42.535+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Upload_Data manual__2023-10-26T10:05:38.649337+00:00 [running]> on host 66c15587ef5c
+[2023-10-26T10:05:42.736+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Upload_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-26T10:05:38.649337+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-26T10:05:38.649337+00:00'
+[2023-10-26T10:05:42.738+0000] {sql.py:274} INFO - Executing: 
+
+        COPY scrap FROM '/var/lib/postgresql/data/data_upload/tangerang_transformed.csv' DELIMITER ',' CSV HEADER
+
+        
+[2023-10-26T10:05:42.954+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-26T10:05:42.965+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-26T10:05:42.999+0000] {sql.py:418} INFO - Running statement: 
+
+        COPY scrap FROM '/var/lib/postgresql/data/data_upload/tangerang_transformed.csv' DELIMITER ',' CSV HEADER
+
+        , parameters: None
+[2023-10-26T10:05:43.064+0000] {sql.py:427} INFO - Rows affected: 588
+[2023-10-26T10:05:43.086+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=Upload_Data, execution_date=20231026T100538, start_date=20231026T100542, end_date=20231026T100543
+[2023-10-26T10:05:43.180+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-26T10:05:43.215+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

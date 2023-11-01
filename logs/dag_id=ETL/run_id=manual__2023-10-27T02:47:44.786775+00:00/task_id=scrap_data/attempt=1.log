@@ -1,0 +1,102 @@
+[2023-10-27T02:47:47.448+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.scrap_data manual__2023-10-27T02:47:44.786775+00:00 [queued]>
+[2023-10-27T02:47:47.464+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.scrap_data manual__2023-10-27T02:47:44.786775+00:00 [queued]>
+[2023-10-27T02:47:47.464+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-27T02:47:47.488+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): scrap_data> on 2023-10-27 02:47:44.786775+00:00
+[2023-10-27T02:47:47.499+0000] {standard_task_runner.py:57} INFO - Started process 347 to run task
+[2023-10-27T02:47:47.505+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'scrap_data', 'manual__2023-10-27T02:47:44.786775+00:00', '--job-id', '169', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpjhra5l5m']
+[2023-10-27T02:47:47.509+0000] {standard_task_runner.py:85} INFO - Job 169: Subtask scrap_data
+[2023-10-27T02:47:47.601+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.scrap_data manual__2023-10-27T02:47:44.786775+00:00 [running]> on host 8bad117ddb55
+[2023-10-27T02:47:47.882+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='scrap_data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-27T02:47:44.786775+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-27T02:47:44.786775+00:00'
+[2023-10-27T02:47:47.887+0000] {ssh.py:135} INFO - Creating ssh_client
+[2023-10-27T02:47:48.151+0000] {ssh.py:112} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2023-10-27T02:47:48.164+0000] {base.py:73} INFO - Using connection ID 'host_machine' for task execution.
+[2023-10-27T02:47:48.164+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2023-10-27T02:47:48.217+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2023-10-27T02:47:48.398+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2023-10-27T02:47:48.399+0000] {ssh.py:476} INFO - Running command: cd /home/***/data_science/web_scrap/rumah/rumah && bash script2.sh 
+[2023-10-27T02:47:49.332+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: rumah)
+[2023-10-27T02:47:49.333+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0], pyOpenSSL 23.2.0 (OpenSSL 3.1.3 19 Sep 2023), cryptography 41.0.4, Platform Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[2023-10-27T02:47:49.335+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.addons] INFO: Enabled addons:
+[2023-10-27T02:47:49.335+0000] {ssh.py:527} WARNING - []
+[2023-10-27T02:47:49.335+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [asyncio] DEBUG: Using selector: EpollSelector
+[2023-10-27T02:47:49.336+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+[2023-10-27T02:47:49.336+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+[2023-10-27T02:47:49.350+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.extensions.telnet] INFO: Telnet Password: d1c32ad74c9270de
+[2023-10-27T02:47:49.388+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.middleware] INFO: Enabled extensions:
+[2023-10-27T02:47:49.388+0000] {ssh.py:527} WARNING - ['scrapy.extensions.corestats.CoreStats',
+[2023-10-27T02:47:49.388+0000] {ssh.py:527} WARNING -  'scrapy.extensions.telnet.TelnetConsole',
+[2023-10-27T02:47:49.388+0000] {ssh.py:527} WARNING -  'scrapy.extensions.memusage.MemoryUsage',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'scrapy.extensions.closespider.CloseSpider',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'scrapy.extensions.feedexport.FeedExporter',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'scrapy.extensions.logstats.LogStats',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'scrapy.extensions.throttle.AutoThrottle']
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [scrapy.crawler] INFO: Overridden settings:
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING - {'AUTOTHROTTLE_ENABLED': True,
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'BOT_NAME': 'rumah',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'CLOSESPIDER_PAGECOUNT': 10,
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'FEED_EXPORT_ENCODING': 'utf-8',
+[2023-10-27T02:47:49.389+0000] {ssh.py:527} WARNING -  'NEWSPIDER_MODULE': 'rumah.spiders',
+[2023-10-27T02:47:49.390+0000] {ssh.py:527} WARNING -  'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+[2023-10-27T02:47:49.390+0000] {ssh.py:527} WARNING -  'RETRY_HTTP_CODES': [429],
+[2023-10-27T02:47:49.390+0000] {ssh.py:527} WARNING -  'SPIDER_MODULES': ['rumah.spiders'],
+[2023-10-27T02:47:49.390+0000] {ssh.py:527} WARNING -  'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+[2023-10-27T02:47:49.468+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:49 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): headers.scrapeops.io:443
+[2023-10-27T02:47:51.147+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [urllib3.connectionpool] DEBUG: https://headers.scrapeops.io:443 "GET /v1/browser-headers?api_key=0c0533f0-3965-4081-91f6-032516eea822&num_results=100 HTTP/1.1" 200 None
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING - ['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2023-10-27T02:47:51.457+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'rumah.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'rumah.middlewares.TooManyRequestsRetryMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2023-10-27T02:47:51.458+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2023-10-27T02:47:51.460+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2023-10-27T02:47:51.460+0000] {ssh.py:527} WARNING - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.middleware] INFO: Enabled item pipelines:
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING - []
+[2023-10-27T02:47:51.461+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.core.engine] INFO: Spider opened
+[2023-10-27T02:47:51.468+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2023-10-27T02:47:51.469+0000] {ssh.py:527} WARNING - 2023-10-27 09:47:51 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+[2023-10-27T02:48:22.022+0000] {ssh.py:527} WARNING - 2023-10-27 09:48:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.rumah123.com/jual/tangerang/metro-permata/rumah/> (referer: None)
+[2023-10-27T02:48:22.157+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - {b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="83", "Chromium";v="83", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.158+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="86", "Chromium";v="86", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="88", "Chromium";v="88", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="84", "Chromium";v="84", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.159+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="83", "Chromium";v="83", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/metro-permata/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="83", "Chromium";v="83", ";Not A Brand";v="99"']}
+[2023-10-27T02:48:22.160+0000] {ssh.py:522} INFO - *********************
+[2023-10-27T02:48:22.819+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2023-10-27T02:48:22.822+0000] {process_utils.py:131} INFO - Sending 15 to group 347. PIDs of all processes in the group: [347]
+[2023-10-27T02:48:22.822+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 347
+[2023-10-27T02:48:22.822+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-10-27T02:48:22.848+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=347, status='terminated', exitcode=0, started='02:47:46') (347) terminated with exit code 0

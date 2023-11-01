@@ -1,0 +1,32 @@
+[2023-10-25T08:15:16.248+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T08:15:15.171740+00:00 [queued]>
+[2023-10-25T08:15:16.255+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T08:15:15.171740+00:00 [queued]>
+[2023-10-25T08:15:16.255+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-25T08:15:16.266+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): get_csv> on 2023-10-25 08:15:15.171740+00:00
+[2023-10-25T08:15:16.271+0000] {standard_task_runner.py:57} INFO - Started process 201 to run task
+[2023-10-25T08:15:16.273+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'get_csv', 'manual__2023-10-25T08:15:15.171740+00:00', '--job-id', '76', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp6k91lokt']
+[2023-10-25T08:15:16.276+0000] {standard_task_runner.py:85} INFO - Job 76: Subtask get_csv
+[2023-10-25T08:15:16.318+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.get_csv manual__2023-10-25T08:15:15.171740+00:00 [running]> on host 0082d6dd3839
+[2023-10-25T08:15:16.411+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='get_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-10-25T08:15:15.171740+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-25T08:15:15.171740+00:00'
+[2023-10-25T08:15:16.423+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-25T08:15:16.442+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/providers/common/sql/hooks/sql.py:219 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2023-10-25T08:15:16.470+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/first_dags.py", line 37, in import_csv
+    df.to_csv('/opt/airflow/data_csv/imported_csv.csv', index=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 3772, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 1186, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/csvs.py", line 240, in save
+    with get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: '/opt/airflow/data_csv/imported_csv.csv'
+[2023-10-25T08:15:16.481+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=get_csv, execution_date=20231025T081515, start_date=20231025T081516, end_date=20231025T081516
+[2023-10-25T08:15:16.491+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 76 for task get_csv ([Errno 13] Permission denied: '/opt/airflow/data_csv/imported_csv.csv'; 201)
+[2023-10-25T08:15:16.526+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-25T08:15:16.541+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

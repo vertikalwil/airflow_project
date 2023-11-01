@@ -1,0 +1,23 @@
+[2023-10-22T12:20:58.569+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T12:20:57.000462+00:00 [queued]>
+[2023-10-22T12:20:58.576+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T12:20:57.000462+00:00 [queued]>
+[2023-10-22T12:20:58.576+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T12:20:58.587+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Upload_Data> on 2023-10-22 12:20:57.000462+00:00
+[2023-10-22T12:20:58.592+0000] {standard_task_runner.py:57} INFO - Started process 1431 to run task
+[2023-10-22T12:20:58.594+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Upload_Data', 'manual__2023-10-22T12:20:57.000462+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp8eqbslsx']
+[2023-10-22T12:20:58.596+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask Upload_Data
+[2023-10-22T12:20:58.628+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Upload_Data manual__2023-10-22T12:20:57.000462+00:00 [running]> on host dcd154787c99
+[2023-10-22T12:20:58.690+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Upload_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T12:20:57.000462+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T12:20:57.000462+00:00'
+[2023-10-22T12:20:58.691+0000] {sql.py:274} INFO - Executing: 
+        
+[2023-10-22T12:20:58.697+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T12:20:58.699+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 383, in run
+    raise ValueError("List of SQL statements is empty")
+ValueError: List of SQL statements is empty
+[2023-10-22T12:20:58.705+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=Upload_Data, execution_date=20231022T122057, start_date=20231022T122058, end_date=20231022T122058
+[2023-10-22T12:20:58.714+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task Upload_Data (List of SQL statements is empty; 1431)
+[2023-10-22T12:20:58.727+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T12:20:58.741+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

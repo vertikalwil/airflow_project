@@ -1,0 +1,38 @@
+[2023-10-22T13:37:57.956+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T13:37:56.657856+00:00 [queued]>
+[2023-10-22T13:37:57.967+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T13:37:56.657856+00:00 [queued]>
+[2023-10-22T13:37:57.967+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T13:37:57.985+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Upload_Data> on 2023-10-22 13:37:56.657856+00:00
+[2023-10-22T13:37:57.992+0000] {standard_task_runner.py:57} INFO - Started process 319 to run task
+[2023-10-22T13:37:57.995+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Upload_Data', 'manual__2023-10-22T13:37:56.657856+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp5mjutm07']
+[2023-10-22T13:37:57.997+0000] {standard_task_runner.py:85} INFO - Job 35: Subtask Upload_Data
+[2023-10-22T13:37:58.091+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Upload_Data manual__2023-10-22T13:37:56.657856+00:00 [running]> on host 32031900c769
+[2023-10-22T13:37:58.205+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Upload_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T13:37:56.657856+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T13:37:56.657856+00:00'
+[2023-10-22T13:37:58.207+0000] {sql.py:274} INFO - Executing: 
+
+        COPY scrap FROM '/opt/***/data_csv/tangerang_transformed.csv' DELIMITER ',' CSV HEADER;
+        
+        
+[2023-10-22T13:37:58.217+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T13:37:58.228+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T13:37:58.243+0000] {sql.py:418} INFO - Running statement: 
+
+        COPY scrap FROM '/opt/***/data_csv/tangerang_transformed.csv' DELIMITER ',' CSV HEADER;
+        
+        , parameters: None
+[2023-10-22T13:37:58.250+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedFile: could not open file "/opt/***/data_csv/tangerang_transformed.csv" for reading: No such file or directory
+HINT:  COPY FROM instructs the PostgreSQL server process to read a file. You may want a client-side facility such as psql's \copy.
+
+[2023-10-22T13:37:58.261+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=Upload_Data, execution_date=20231022T133756, start_date=20231022T133757, end_date=20231022T133758
+[2023-10-22T13:37:58.273+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 35 for task Upload_Data (could not open file "/opt/***/data_csv/tangerang_transformed.csv" for reading: No such file or directory
+HINT:  COPY FROM instructs the PostgreSQL server process to read a file. You may want a client-side facility such as psql's \copy.
+; 319)
+[2023-10-22T13:37:58.288+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T13:37:58.307+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

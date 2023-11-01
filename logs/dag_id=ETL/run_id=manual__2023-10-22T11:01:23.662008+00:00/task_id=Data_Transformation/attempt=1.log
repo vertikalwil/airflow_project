@@ -1,0 +1,22 @@
+[2023-10-22T11:01:25.685+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:01:23.662008+00:00 [queued]>
+[2023-10-22T11:01:25.695+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:01:23.662008+00:00 [queued]>
+[2023-10-22T11:01:25.695+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T11:01:25.710+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): Data_Transformation> on 2023-10-22 11:01:23.662008+00:00
+[2023-10-22T11:01:25.717+0000] {standard_task_runner.py:57} INFO - Started process 227 to run task
+[2023-10-22T11:01:25.722+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Data_Transformation', 'manual__2023-10-22T11:01:23.662008+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp1iqmxey6']
+[2023-10-22T11:01:25.725+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask Data_Transformation
+[2023-10-22T11:01:25.782+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Data_Transformation manual__2023-10-22T11:01:23.662008+00:00 [running]> on host 4ad883a00f98
+[2023-10-22T11:01:25.879+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Data_Transformation' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T11:01:23.662008+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T11:01:23.662008+00:00'
+[2023-10-22T11:01:25.909+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/first_dags.py", line 18, in data_transform
+    df['spesifikasi'] = df.spesifikasi.apply(ast.literal_eval)
+NameError: name 'ast' is not defined
+[2023-10-22T11:01:25.917+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=Data_Transformation, execution_date=20231022T110123, start_date=20231022T110125, end_date=20231022T110125
+[2023-10-22T11:01:25.931+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 8 for task Data_Transformation (name 'ast' is not defined; 227)
+[2023-10-22T11:01:25.975+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T11:01:26.000+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

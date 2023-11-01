@@ -1,0 +1,16 @@
+[2023-10-22T01:14:24.110+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:14:23.021839+00:00 [queued]>
+[2023-10-22T01:14:24.130+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:14:23.021839+00:00 [queued]>
+[2023-10-22T01:14:24.130+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T01:14:24.156+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): scrape_data> on 2023-10-22 01:14:23.021839+00:00
+[2023-10-22T01:14:24.166+0000] {standard_task_runner.py:57} INFO - Started process 679 to run task
+[2023-10-22T01:14:24.172+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dagg', 'scrape_data', 'manual__2023-10-22T01:14:23.021839+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpbiniktxu']
+[2023-10-22T01:14:24.174+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask scrape_data
+[2023-10-22T01:14:24.239+0000] {task_command.py:416} INFO - Running <TaskInstance: first_dagg.scrape_data manual__2023-10-22T01:14:23.021839+00:00 [running]> on host 88ab045975f5
+[2023-10-22T01:14:24.345+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='first_dagg' AIRFLOW_CTX_TASK_ID='scrape_data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T01:14:23.021839+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T01:14:23.021839+00:00'
+[2023-10-22T01:14:24.348+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-10-22T01:14:24.349+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pwd > mypipe1 ']
+[2023-10-22T01:14:24.365+0000] {subprocess.py:86} INFO - Output:
+[2023-10-22T01:14:24.368+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-10-22T01:14:24.396+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=first_dagg, task_id=scrape_data, execution_date=20231022T011423, start_date=20231022T011424, end_date=20231022T011424
+[2023-10-22T01:14:24.425+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-22T01:14:24.446+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,42 @@
+[2023-10-22T04:57:18.089+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T04:57:16.881894+00:00 [queued]>
+[2023-10-22T04:57:18.097+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T04:57:16.881894+00:00 [queued]>
+[2023-10-22T04:57:18.097+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T04:57:18.111+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): task1> on 2023-10-22 04:57:16.881894+00:00
+[2023-10-22T04:57:18.115+0000] {standard_task_runner.py:57} INFO - Started process 247 to run task
+[2023-10-22T04:57:18.117+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dagg', 'task1', 'manual__2023-10-22T04:57:16.881894+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpix5amzy8']
+[2023-10-22T04:57:18.119+0000] {standard_task_runner.py:85} INFO - Job 35: Subtask task1
+[2023-10-22T04:57:18.166+0000] {task_command.py:416} INFO - Running <TaskInstance: first_dagg.task1 manual__2023-10-22T04:57:16.881894+00:00 [running]> on host ad92d01bdd16
+[2023-10-22T04:57:18.253+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='first_dagg' AIRFLOW_CTX_TASK_ID='task1' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T04:57:16.881894+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T04:57:16.881894+00:00'
+[2023-10-22T04:57:18.253+0000] {ssh.py:135} INFO - Creating ssh_client
+[2023-10-22T04:57:18.284+0000] {ssh.py:112} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2023-10-22T04:57:18.295+0000] {base.py:73} INFO - Using connection ID 'host_machine' for task execution.
+[2023-10-22T04:57:18.296+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2023-10-22T04:57:18.296+0000] {ssh.py:342} INFO - Failed to connect. Sleeping before retry attempt 1
+[2023-10-22T04:57:22.578+0000] {ssh.py:342} INFO - Failed to connect. Sleeping before retry attempt 2
+[2023-10-22T04:57:26.701+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 172, in execute
+    with self.get_ssh_client() as ssh_client:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 136, in get_ssh_client
+    return self.get_hook().get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 346, in get_conn
+    for attempt in Retrying(
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 353, in get_conn
+    client.connect(**connect_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 127.0.0.1
+[2023-10-22T04:57:26.709+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=first_dagg, task_id=task1, execution_date=20231022T045716, start_date=20231022T045718, end_date=20231022T045726
+[2023-10-22T04:57:26.720+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 35 for task task1 ([Errno None] Unable to connect to port 22 on 127.0.0.1; 247)
+[2023-10-22T04:57:26.748+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T04:57:26.760+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

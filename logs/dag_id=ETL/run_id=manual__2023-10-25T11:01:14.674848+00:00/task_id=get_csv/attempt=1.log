@@ -1,0 +1,26 @@
+[2023-10-25T11:01:16.319+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T11:01:14.674848+00:00 [queued]>
+[2023-10-25T11:01:16.326+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.get_csv manual__2023-10-25T11:01:14.674848+00:00 [queued]>
+[2023-10-25T11:01:16.327+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-25T11:01:16.338+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): get_csv> on 2023-10-25 11:01:14.674848+00:00
+[2023-10-25T11:01:16.342+0000] {standard_task_runner.py:57} INFO - Started process 239 to run task
+[2023-10-25T11:01:16.345+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'get_csv', 'manual__2023-10-25T11:01:14.674848+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpy2y45aq3']
+[2023-10-25T11:01:16.347+0000] {standard_task_runner.py:85} INFO - Job 112: Subtask get_csv
+[2023-10-25T11:01:16.390+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.get_csv manual__2023-10-25T11:01:14.674848+00:00 [running]> on host 981d0ca79d2c
+[2023-10-25T11:01:16.478+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='get_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-10-25T11:01:14.674848+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-25T11:01:14.674848+00:00'
+[2023-10-25T11:01:16.489+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-25T11:01:16.514+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/providers/common/sql/hooks/sql.py:219 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2023-10-25T11:01:16.586+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/first_dags.py", line 27, in import_csv
+    df = fungsi.data_pbi_func(df)
+  File "/opt/airflow/dags/fungsi.py", line 94, in data_pbi_func
+    listrik_impute = pd.DataFrame(KNNImputer(n_neighbors=1).fit_transform(df[['daya_listrik','avg_bangunan']]))
+NameError: name 'KNNImputer' is not defined
+[2023-10-25T11:01:16.596+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=ETL, task_id=get_csv, execution_date=20231025T110114, start_date=20231025T110116, end_date=20231025T110116
+[2023-10-25T11:01:16.611+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 112 for task get_csv (name 'KNNImputer' is not defined; 239)
+[2023-10-25T11:01:16.638+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-25T11:01:16.658+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

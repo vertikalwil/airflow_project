@@ -1,0 +1,110 @@
+[2023-10-22T05:51:20.867+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T05:51:20.178039+00:00 [queued]>
+[2023-10-22T05:51:20.876+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T05:51:20.178039+00:00 [queued]>
+[2023-10-22T05:51:20.877+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T05:51:20.892+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): task1> on 2023-10-22 05:51:20.178039+00:00
+[2023-10-22T05:51:20.897+0000] {standard_task_runner.py:57} INFO - Started process 1317 to run task
+[2023-10-22T05:51:20.899+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dagg', 'task1', 'manual__2023-10-22T05:51:20.178039+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmp4so21lkv']
+[2023-10-22T05:51:20.904+0000] {standard_task_runner.py:85} INFO - Job 61: Subtask task1
+[2023-10-22T05:51:20.949+0000] {task_command.py:416} INFO - Running <TaskInstance: first_dagg.task1 manual__2023-10-22T05:51:20.178039+00:00 [running]> on host 0a51e56afb27
+[2023-10-22T05:51:21.035+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='first_dagg' AIRFLOW_CTX_TASK_ID='task1' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T05:51:20.178039+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T05:51:20.178039+00:00'
+[2023-10-22T05:51:21.036+0000] {ssh.py:135} INFO - Creating ssh_client
+[2023-10-22T05:51:21.067+0000] {ssh.py:112} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2023-10-22T05:51:21.075+0000] {base.py:73} INFO - Using connection ID 'host_machine' for task execution.
+[2023-10-22T05:51:21.077+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2023-10-22T05:51:21.089+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2023-10-22T05:51:21.244+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2023-10-22T05:51:21.244+0000] {ssh.py:476} INFO - Running command: cd /home/***/data_science/web_scrap/rumah/rumah && bash script2.sh 
+[2023-10-22T05:51:21.656+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: rumah)
+[2023-10-22T05:51:21.657+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0], pyOpenSSL 23.2.0 (OpenSSL 3.1.3 19 Sep 2023), cryptography 41.0.4, Platform Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[2023-10-22T05:51:21.658+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.addons] INFO: Enabled addons:
+[2023-10-22T05:51:21.658+0000] {ssh.py:527} WARNING - []
+[2023-10-22T05:51:21.659+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [asyncio] DEBUG: Using selector: EpollSelector
+[2023-10-22T05:51:21.659+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+[2023-10-22T05:51:21.659+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+[2023-10-22T05:51:21.665+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.extensions.telnet] INFO: Telnet Password: 0d3f8cb49dc4d912
+[2023-10-22T05:51:21.688+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.middleware] INFO: Enabled extensions:
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING - ['scrapy.extensions.corestats.CoreStats',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.telnet.TelnetConsole',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.memusage.MemoryUsage',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.closespider.CloseSpider',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.feedexport.FeedExporter',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.logstats.LogStats',
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING -  'scrapy.extensions.throttle.AutoThrottle']
+[2023-10-22T05:51:21.689+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [scrapy.crawler] INFO: Overridden settings:
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING - {'AUTOTHROTTLE_ENABLED': True,
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'BOT_NAME': 'rumah',
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'CLOSESPIDER_PAGECOUNT': 10,
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'FEED_EXPORT_ENCODING': 'utf-8',
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'NEWSPIDER_MODULE': 'rumah.spiders',
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'RETRY_HTTP_CODES': [429],
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'SPIDER_MODULES': ['rumah.spiders'],
+[2023-10-22T05:51:21.690+0000] {ssh.py:527} WARNING -  'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+[2023-10-22T05:51:21.727+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:21 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): headers.scrapeops.io:443
+[2023-10-22T05:51:23.047+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [urllib3.connectionpool] DEBUG: https://headers.scrapeops.io:443 "GET /v1/browser-headers?api_key=0c0533f0-3965-4081-91f6-032516eea822&num_results=100 HTTP/1.1" 200 None
+[2023-10-22T05:51:23.315+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2023-10-22T05:51:23.315+0000] {ssh.py:527} WARNING - ['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2023-10-22T05:51:23.315+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2023-10-22T05:51:23.315+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2023-10-22T05:51:23.316+0000] {ssh.py:527} WARNING -  'rumah.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware',
+[2023-10-22T05:51:23.317+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2023-10-22T05:51:23.317+0000] {ssh.py:527} WARNING -  'rumah.middlewares.TooManyRequestsRetryMiddleware',
+[2023-10-22T05:51:23.317+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.middleware] INFO: Enabled item pipelines:
+[2023-10-22T05:51:23.318+0000] {ssh.py:527} WARNING - []
+[2023-10-22T05:51:23.319+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.core.engine] INFO: Spider opened
+[2023-10-22T05:51:23.320+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2023-10-22T05:51:23.322+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:23 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6026
+[2023-10-22T05:51:26.110+0000] {ssh.py:527} WARNING - 2023-10-22 12:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.rumah123.com/jual/tangerang/karawaci/rumah/> (referer: None)
+[2023-10-22T05:51:26.241+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - {b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="86", "Chromium";v="86", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="95", "Chromium";v="95", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.76'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Microsoft Edge;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.242+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="95", "Chromium";v="95", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="72", "Chromium";v="72", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'macOS'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="84", "Chromium";v="84", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.49'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Microsoft Edge;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="72", "Chromium";v="72", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.243+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.244+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="89", "Chromium";v="89", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.244+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:26.244+0000] {ssh.py:522} INFO - {b'Referer': [b'https://www.rumah123.com/jual/tangerang/karawaci/rumah/'], b'Accept': [b'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'], b'Accept-Language': [b'en'], b'User-Agent': [b'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'], b'Accept-Encoding': [b'gzip, deflate'], b'Sec-Fetch-User': [b'?1'], b'Sec-Fetch-Mod': [b''], b'Sec-Ch-Ua-Platform': [b'Windows'], b'Sec-Ch-Ua-Mobile': [b'?0'], b'Sec-Ch-Ua': [b'Google Chrome;v="90", "Chromium";v="90", ";Not A Brand";v="99"']}
+[2023-10-22T05:51:26.244+0000] {ssh.py:522} INFO - *********************
+[2023-10-22T05:51:36.262+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 173, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 158, in run_ssh_client_command
+    exit_status, agg_stdout, agg_stderr = self.ssh_hook.exec_ssh_client_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 547, in exec_ssh_client_command
+    raise AirflowException("SSH command timed out")
+airflow.exceptions.AirflowException: SSH command timed out
+[2023-10-22T05:51:36.265+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=first_dagg, task_id=task1, execution_date=20231022T055120, start_date=20231022T055120, end_date=20231022T055136
+[2023-10-22T05:51:36.277+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 61 for task task1 (SSH command timed out; 1317)
+[2023-10-22T05:51:36.320+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T05:51:36.333+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

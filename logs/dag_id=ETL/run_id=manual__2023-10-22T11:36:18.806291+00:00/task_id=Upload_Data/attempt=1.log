@@ -1,0 +1,20 @@
+[2023-10-22T11:36:19.845+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T11:36:18.806291+00:00 [queued]>
+[2023-10-22T11:36:19.852+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL.Upload_Data manual__2023-10-22T11:36:18.806291+00:00 [queued]>
+[2023-10-22T11:36:19.853+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T11:36:19.865+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): Upload_Data> on 2023-10-22 11:36:18.806291+00:00
+[2023-10-22T11:36:19.870+0000] {standard_task_runner.py:57} INFO - Started process 268 to run task
+[2023-10-22T11:36:19.873+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'ETL', 'Upload_Data', 'manual__2023-10-22T11:36:18.806291+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpv2f3v0s5']
+[2023-10-22T11:36:19.875+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask Upload_Data
+[2023-10-22T11:36:19.915+0000] {task_command.py:416} INFO - Running <TaskInstance: ETL.Upload_Data manual__2023-10-22T11:36:18.806291+00:00 [running]> on host dcd154787c99
+[2023-10-22T11:36:19.988+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='ETL' AIRFLOW_CTX_TASK_ID='Upload_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T11:36:18.806291+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T11:36:18.806291+00:00'
+[2023-10-22T11:36:19.988+0000] {sql.py:274} INFO - Executing: 
+        CREATE DATABASE db_scrapped
+        
+[2023-10-22T11:36:19.996+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T11:36:20.003+0000] {base.py:73} INFO - Using connection ID 'postgres_docker' for task execution.
+[2023-10-22T11:36:20.013+0000] {sql.py:418} INFO - Running statement: 
+        CREATE DATABASE db_scrapped
+        , parameters: None
+[2023-10-22T11:36:20.162+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=ETL, task_id=Upload_Data, execution_date=20231022T113618, start_date=20231022T113619, end_date=20231022T113620
+[2023-10-22T11:36:20.205+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-22T11:36:20.219+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

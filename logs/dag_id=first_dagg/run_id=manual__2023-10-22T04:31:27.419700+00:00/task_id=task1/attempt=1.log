@@ -1,0 +1,82 @@
+[2023-10-22T04:31:27.796+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T04:31:27.419700+00:00 [queued]>
+[2023-10-22T04:31:27.809+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dagg.task1 manual__2023-10-22T04:31:27.419700+00:00 [queued]>
+[2023-10-22T04:31:27.810+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-22T04:31:27.829+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): task1> on 2023-10-22 04:31:27.419700+00:00
+[2023-10-22T04:31:27.835+0000] {standard_task_runner.py:57} INFO - Started process 3120 to run task
+[2023-10-22T04:31:27.838+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'first_dagg', 'task1', 'manual__2023-10-22T04:31:27.419700+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/first_dags.py', '--cfg-path', '/tmp/tmpdx99y2_8']
+[2023-10-22T04:31:27.839+0000] {standard_task_runner.py:85} INFO - Job 18: Subtask task1
+[2023-10-22T04:31:27.882+0000] {task_command.py:416} INFO - Running <TaskInstance: first_dagg.task1 manual__2023-10-22T04:31:27.419700+00:00 [running]> on host 60e772682c42
+[2023-10-22T04:31:27.951+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='me' AIRFLOW_CTX_DAG_ID='first_dagg' AIRFLOW_CTX_TASK_ID='task1' AIRFLOW_CTX_EXECUTION_DATE='2023-10-22T04:31:27.419700+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-22T04:31:27.419700+00:00'
+[2023-10-22T04:31:27.952+0000] {ssh.py:135} INFO - Creating ssh_client
+[2023-10-22T04:31:27.982+0000] {ssh.py:112} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2023-10-22T04:31:27.990+0000] {base.py:73} INFO - Using connection ID 'host_machine' for task execution.
+[2023-10-22T04:31:27.991+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2023-10-22T04:31:38.067+0000] {ssh.py:342} INFO - Failed to connect. Sleeping before retry attempt 1
+[2023-10-22T04:31:47.217+0000] {transport.py:1893} ERROR - Exception (client): Error reading SSH protocol banner
+[2023-10-22T04:31:47.218+0000] {transport.py:1891} ERROR - Traceback (most recent call last):
+[2023-10-22T04:31:47.218+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2292, in _check_banner
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -     buf = self.packetizer.readline(timeout)
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/packet.py", line 374, in readline
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -     buf += self._read_timeout(timeout)
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/packet.py", line 603, in _read_timeout
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -     raise EOFError()
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR - EOFError
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR - During handling of the above exception, another exception occurred:
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR - Traceback (most recent call last):
+[2023-10-22T04:31:47.219+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2113, in run
+[2023-10-22T04:31:47.220+0000] {transport.py:1891} ERROR -     self._check_banner()
+[2023-10-22T04:31:47.220+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2296, in _check_banner
+[2023-10-22T04:31:47.220+0000] {transport.py:1891} ERROR -     raise SSHException(
+[2023-10-22T04:31:47.220+0000] {transport.py:1891} ERROR - paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+[2023-10-22T04:31:47.220+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:52.276+0000] {transport.py:1893} ERROR - Exception (client): Error reading SSH protocol banner
+[2023-10-22T04:31:52.276+0000] {transport.py:1891} ERROR - Traceback (most recent call last):
+[2023-10-22T04:31:52.276+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2292, in _check_banner
+[2023-10-22T04:31:52.276+0000] {transport.py:1891} ERROR -     buf = self.packetizer.readline(timeout)
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/packet.py", line 374, in readline
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR -     buf += self._read_timeout(timeout)
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/packet.py", line 603, in _read_timeout
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR -     raise EOFError()
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR - EOFError
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR - During handling of the above exception, another exception occurred:
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:52.277+0000] {transport.py:1891} ERROR - Traceback (most recent call last):
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2113, in run
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR -     self._check_banner()
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR -   File "/home/***/.local/lib/python3.8/site-packages/paramiko/transport.py", line 2296, in _check_banner
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR -     raise SSHException(
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR - paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+[2023-10-22T04:31:52.278+0000] {transport.py:1891} ERROR - 
+[2023-10-22T04:31:52.278+0000] {ssh.py:342} INFO - Failed to connect. Sleeping before retry attempt 2
+[2023-10-22T04:32:06.660+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 172, in execute
+    with self.get_ssh_client() as ssh_client:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 136, in get_ssh_client
+    return self.get_hook().get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 346, in get_conn
+    for attempt in Retrying(
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 353, in get_conn
+    client.connect(**connect_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/paramiko/client.py", line 457, in connect
+    server_key = t.get_remote_server_key()
+  File "/home/airflow/.local/lib/python3.8/site-packages/paramiko/transport.py", line 902, in get_remote_server_key
+    raise SSHException("No existing session")
+paramiko.ssh_exception.SSHException: No existing session
+[2023-10-22T04:32:06.667+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=first_dagg, task_id=task1, execution_date=20231022T043127, start_date=20231022T043127, end_date=20231022T043206
+[2023-10-22T04:32:06.679+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 18 for task task1 (No existing session; 3120)
+[2023-10-22T04:32:06.719+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-22T04:32:06.731+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
