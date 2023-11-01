@@ -20,15 +20,15 @@ This project involves creating data pipelines using Apache Airflow. For more det
 
 * To initialize run ```airflow init```
 
-* To open airflow run ''' docker-compose up ''' and then open ''' http://localhost:8080/ ''' on your web browser
+* To open airflow run ```docker-compose up``` and then open ```localhost:8080``` on your web browser
 
 4. Install python packages into Docker's image
 
 * Make sure Dockerfile & requirements.txt in directory
 
-* Run ''' docker build . '''
+* Run ```docker build . ```
 
-* Restart airflow by running ''' docker-compose down ''' and ''' docker-compose up'''
+* Restart airflow by running ```docker-compose down``` and ```docker-compose up```
 
 ## SCRIPTS
 
